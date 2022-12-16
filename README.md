@@ -3,10 +3,16 @@ Role Name
 
 A brief description of the role goes here.
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- write RaspberryPi OS Lite (32-bit) to microSD using Raspberry Pi Imager
+- `touch /Volumes/boot/ssh && touch /Volumes/boot/wpa_supplicant.conf && touch /Volumes/boot/userconf.txt`
+  - generate password `openssl passwd -6`, works at least with debian's openssl
+  - `userconf.txt` contains `myusername:mypasswordhash`
+  - add wifi configs to wpa_supplicant.conf file
+- insert the microSD card to the RaspberryPi Zero
+- connect via SSH using default credentials and change the default password
+- setup ssh key authentication e.g. `ssh-copy-id -i ~/.ssh/id_rsa pi@<ip_address>`
 
 Role Variables
 --------------
