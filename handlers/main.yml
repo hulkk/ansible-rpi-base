@@ -1,2 +1,23 @@
 ---
-# handlers file for rpi-base
+
+- name: restart sshd
+  systemd:
+    name: sshd
+    state: restarted
+
+- name: restart rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted
+
+- name: exec locale-gen
+  command:
+    cmd: /usr/sbin/locale-gen
+
+- name: restart systemd-timesyncd
+  systemd:
+    name: systemd-timesyncd
+    state: restarted
+
+- name: restart computer
+  reboot:
