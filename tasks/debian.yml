@@ -18,7 +18,6 @@
     group: root
     mode: '0755'
 
-# FIX warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
 - name: enable en_us.utf8 in locale.gen
   replace:
     path: /etc/locale.gen
@@ -26,9 +25,9 @@
     replace: 'en_US.UTF-8 UTF-8'
   notify: exec locale-gen
 
-- name: configure timezone to Europe/Helsinki
+- name: configure timezone to {{ rpi_base_timezone }}
   timezone:
-    name: Europe/Helsinki
+    name: "{{ rpi_base_timezone }}"
   notify: restart rsyslog
 
 - name: configure syslog timestamp
