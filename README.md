@@ -12,7 +12,7 @@ A brief description of the role goes here.
 - insert the microSD card to the RaspberryPi Zero
 - connect via SSH using configured credentials
 - setup ssh key authentication if not configured with Raspberry Pi Imager 
-    - e.g. `ssh-copy-id -i ~/.ssh/id_rsa <username>@<ip_address>`
+    - e.g. `ssh-copy-id -i ~/.ssh/id_ed25519 <username>@<ip_address>`
 
 Role Variables
 --------------
