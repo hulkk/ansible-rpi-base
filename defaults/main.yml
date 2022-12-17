@@ -1,0 +1,4 @@
+---
+rpi_base_timezone: "Europe/Helsinki"
+rpi_base_banner_issue: "Raspbian GNU/Linux 11 \n"
+rpi_base_ntp: "time.mikes.fi time1.mikes.fi time2.mikes.fi"
