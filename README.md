@@ -11,7 +11,8 @@ A brief description of the role goes here.
     - [ ] enable telemetry
 - insert the microSD card to the RaspberryPi Zero
 - connect via SSH using configured credentials
-- setup ssh key authentication e.g. `ssh-copy-id -i ~/.ssh/id_rsa pi@<ip_address>`
+- setup ssh key authentication if not configured with Raspberry Pi Imager 
+    - e.g. `ssh-copy-id -i ~/.ssh/id_rsa <username>@<ip_address>`
 
 Role Variables
 --------------
