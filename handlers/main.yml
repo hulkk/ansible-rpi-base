@@ -9,6 +9,7 @@
   systemd:
     name: rsyslog
     state: restarted
+  become: yes
 
 - name: exec locale-gen
   command:
