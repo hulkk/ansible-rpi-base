@@ -1,17 +1,16 @@
-Role Name
-=========
+# ansible-rpi-base
 
 A brief description of the role goes here.
 
 ## Requirements
 
-- write RaspberryPi OS Lite (32-bit) to microSD using Raspberry Pi Imager
-- `touch /Volumes/boot/ssh && touch /Volumes/boot/wpa_supplicant.conf && touch /Volumes/boot/userconf.txt`
-  - generate password `openssl passwd -6`, works at least with debian's openssl
-  - `userconf.txt` contains `myusername:mypasswordhash`
-  - add wifi configs to wpa_supplicant.conf file
+- write RaspberryPi OS Lite (32-bit) to microSD using Raspberry Pi Imager with following changes to advanced settings
+    - [x] enable ssh
+    - [x] set username & password
+    - [x] configure wireless lan
+    - [ ] enable telemetry
 - insert the microSD card to the RaspberryPi Zero
-- connect via SSH using default credentials and change the default password
+- connect via SSH using configured credentials
 - setup ssh key authentication e.g. `ssh-copy-id -i ~/.ssh/id_rsa pi@<ip_address>`
 
 Role Variables
@@ -32,13 +31,3 @@ Including an example of how to use your role (for instance, with variables passe
     - hosts: servers
       roles:
          - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
