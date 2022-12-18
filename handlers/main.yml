@@ -20,6 +20,7 @@
   systemd:
     name: systemd-timesyncd
     state: restarted
+  become: yes
 
 - name: restart computer
   reboot:
