@@ -4,6 +4,7 @@
   systemd:
     name: sshd
     state: restarted
+  become: yes
 
 - name: restart rsyslog
   systemd:
@@ -22,3 +23,4 @@
 
 - name: restart computer
   reboot:
+  become: yes
