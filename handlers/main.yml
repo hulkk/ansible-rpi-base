@@ -4,11 +4,13 @@
   systemd:
     name: sshd
     state: restarted
+  become: yes
 
 - name: restart rsyslog
   systemd:
     name: rsyslog
     state: restarted
+  become: yes
 
 - name: exec locale-gen
   command:
@@ -21,3 +23,4 @@
 
 - name: restart computer
   reboot:
+  become: yes
