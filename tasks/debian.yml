@@ -27,6 +27,15 @@
     mode: '0755'
   notify: restart computer
 
+- name: fix bluetooth service config
+  copy:
+    src: bluetooth.service
+    dest: /lib/systemd/system/bluetooth.service
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart computer
+
 - name: enable en_us.utf8 in locale.gen
   replace:
     path: /etc/locale.gen
