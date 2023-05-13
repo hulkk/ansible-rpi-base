@@ -18,6 +18,15 @@
     group: root
     mode: '0755'
 
+- name: voltage adjust as a workaround for wlan issues
+  copy:
+    src: config.txt
+    dest: /boot/config.txt
+    owner: root
+    group: root
+    mode: '0755'
+  notify: restart computer
+
 - name: enable en_us.utf8 in locale.gen
   replace:
     path: /etc/locale.gen
